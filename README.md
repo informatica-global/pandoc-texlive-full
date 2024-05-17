@@ -46,3 +46,30 @@ make push
 - The `LATEST_RELEASE` variable is automatically updated with the latest Pandoc version number.
 - The Docker image will be tagged with both the specific Pandoc version and `latest`.
 - To build, ensure Docker and `make` are installed on your system.
+
+## Using VS Code Tasks for PDF Generation
+
+The repository includes a `.vscode/tasks.json` file, which defines several tasks to streamline the process of generating PDFs using Docker and Pandoc. These tasks can be executed directly from Visual Studio Code (VS Code), simplifying the workflow for generating various types of PDFs, including multilingual and Beamer presentations.
+
+### Tasks Overview
+
+The tasks are designed to cover different use cases, including creating standard PDFs, Arabic PDFs, and Beamer presentation PDFs with incremental slides and handout formats. Here is a summary of the available tasks:
+
+1. **MakePDF**: Generates a standard PDF from the current file.
+2. **MakeArabicPDF**: Generates a PDF from the current file using the `lualatex` engine, which supports Arabic and other Unicode languages.
+3. **MakeArabicBeamerHandoutPDF**: Creates a Beamer presentation handout PDF from the current file, formatted for Arabic with the `lualatex` engine.
+4. **MakeArabicBeamerIncrementalPDF**: Creates an incremental Beamer presentation PDF from the current file, formatted for Arabic with the `lualatex` engine.
+5. **MakeBeamerIncrementalPDF**: Creates an incremental Beamer presentation PDF from the current file.
+6. **MakeBeamerHandoutPDF**: Creates a Beamer presentation handout PDF from the current file.
+
+### Running Tasks
+
+To run a task, follow these steps:
+
+1. Open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P on macOS).
+2. Type `Tasks: Run Task` and select it.
+3. Choose the desired task from the list.
+
+Alternatively, you can bind these tasks to keyboard shortcuts by configuring your `keybindings.json` file.
+
+These tasks leverage Docker to run Pandoc with the necessary LaTeX packages and fonts, ensuring a consistent and reproducible environment for PDF generation.
