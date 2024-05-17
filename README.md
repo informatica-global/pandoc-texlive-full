@@ -64,12 +64,38 @@ The tasks are designed to cover different use cases, including creating standard
 
 ### Running Tasks
 
-To run a task, follow these steps:
+To run a task, you can use the Command Palette or access the tasks through the menu.
+
+#### Using the Command Palette
 
 1. Open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P on macOS).
 2. Type `Tasks: Run Task` and select it.
 3. Choose the desired task from the list.
 
-Alternatively, you can bind these tasks to keyboard shortcuts by configuring your `keybindings.json` file.
+#### Using the Menu
+
+1. Navigate to `Terminal` in the top menu.
+2. Select `Run Task...`.
+3. Choose the desired task from the list.
+
+### Adding the Tasks to Other Workspaces
+
+To add this `tasks.json` file to other workspaces, just copy the `tasks.json` file to the `.vscode` directory in your workspace. To add these tasks globally to all repos use the user scope in VS Code, follow these instructions based on your operating system.
+
+#### Linux and macOS
+
+Copy `tasks.json` to the global VS Code configuration directory typically at:
+
+   ```sh
+   ~/.config/Code/User/tasks.json
+   ```
+
+#### Windows
+
+Copy the `tasks.json` file to the global VS Code configuration directory typically at:
+
+   ```sh
+   %APPDATA%\Code\User\tasks.json
+   ```
 
 These tasks leverage Docker to run Pandoc with the necessary LaTeX packages and fonts, ensuring a consistent and reproducible environment for PDF generation.
