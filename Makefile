@@ -1,9 +1,18 @@
 # Define variables
 LATEST_RELEASE := $(shell wget -q -O - "https://api.github.com/repos/jgm/pandoc/releases/latest" | grep -oP '"tag_name": "\K(.*)(?=")')
 IMAGE_NAME := ghcr.io/informatica-global/pandoc-texlive-full
+LOCAL_IMAGE_TAG := $(shell docker images --format "{{.Tag}}" $(IMAGE_NAME) | grep -v latest | sort -rV | head -n 1)
 
 # Default target
-all: build
+all: check_version build
+
+# Check if the LATEST_RELEASE is higher than LOCAL_IMAGE_TAG
+check_version:
+	@if [ "$(LATEST_RELEASE)" != "$(LOCAL_IMAGE_TAG)" ] && [ "$(LATEST_RELEASE)" != "" ] && [ "$(LOCAL_IMAGE_TAG)" != "" ] && [ `echo -e "$(LOCAL_IMAGE_TAG)\n$(LATEST_RELEASE)" | sort -V | head -n 1` != "$(LATEST_RELEASE)" ]; then \
+		echo "New version detected will add a git tag v$(LATEST_RELEASE)"; \
+		git tag v$(LATEST_RELEASE); \
+		echo "Please consider running 'git push origin v"$(LATEST_RELEASE)"'"; \
+	fi
 
 # Build the Docker image
 build:
