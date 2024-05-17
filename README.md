@@ -1,8 +1,8 @@
 # Docker Container for Pandoc with Full Multilingual LaTeX Packages and Arabic Fonts
 
-This container leverages Docker to run Pandoc with the necessary LaTeX packages and fonts, ensuring a consistent and reproducible environment for PDF generation. It can be used for any of the file formats supported by Pandoc. It is specifically geared towards making an easy consistent workflow to use Markdown for professional documents and presentations with beautiful LaTeX typesetting all done automatically.
+This container leverages Docker to run Pandoc with the necessary LaTeX packages and fonts, ensuring a consistent and reproducible environment for PDF generation. It supports various file formats handled by Pandoc and is tailored to facilitate a streamlined workflow for creating professional documents and presentations with Markdown and LaTeX typesetting.
 
-This Docker container provides the latest Pandoc release from its official GitHub repository, bundled with a comprehensive set of LaTeX packages and additional Arabic fonts to enhance Arabic language support. Please note that due to the inclusion of the `texlive-full` packages, the container download size exceeds 2GB.
+This Docker container provides the latest Pandoc release from its official GitHub repository, bundled with a comprehensive set of LaTeX packages and additional Arabic fonts to enhance Arabic language support. Due to the inclusion of the `texlive-full` packages, the container download size exceeds 2GB.
 
 ## Running the Container
 
@@ -47,7 +47,7 @@ make push
 - You can add extra tags or repositories in the Makefile to automate tagging and pushing.
 - The `LATEST_RELEASE` variable is automatically updated with the latest Pandoc version number.
 - The Docker image will be tagged with both the specific Pandoc version and `latest`.
-- To build, ensure Docker and `make` are installed on your system.
+- Ensure Docker and `make` are installed on your system.
 
 ## Using VS Code Tasks for PDF Generation
 
@@ -82,20 +82,20 @@ To run a task, you can use the Command Palette or access the tasks through the m
 
 ### Adding the Tasks to Other Workspaces
 
-To add this `tasks.json` file to other workspaces, just copy the `tasks.json` file to the `.vscode` directory in your workspace. To add these tasks globally to all repos use the user scope in VS Code, follow these instructions based on your operating system.
+To add this `tasks.json` file to other workspaces, copy the `tasks.json` file to the `.vscode` directory in your workspace. To add these tasks globally to all your VS Code workspaces, use the user scope in VS Code. Follow these instructions based on your operating system:
 
 #### Linux and macOS
 
-Copy `tasks.json` to the global VS Code configuration directory typically at:
+Copy `tasks.json` to the global VS Code configuration directory:
 
    ```sh
-   ~/.config/Code/User/tasks.json
+   cp path/to/repo/.vscode/tasks.json ~/.config/Code/User/tasks.json
    ```
 
 #### Windows
 
-Copy the `tasks.json` file to the global VS Code configuration directory typically at:
+Copy the `tasks.json` file to the global VS Code configuration directory:
 
    ```sh
-   %APPDATA%\Code\User\tasks.json
+   copy path\to\repo\.vscode\tasks.json %APPDATA%\Code\User\tasks.json
    ```
