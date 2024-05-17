@@ -2,42 +2,42 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "MakePDF",
+            "label": "Make PDF",
             "type": "shell",
             "command": "docker run --rm -v \"$PWD:/data\" --net=none -u $(id -u):$(id -g) ghcr.io/informatica-global/pandoc-texlive-full \"${relativeFile}\" -o \"${relativeFileDirname}/${fileBasenameNoExtension}.pdf\"",
             "problemMatcher": [],
             "group": "build"
         },
         {
-            "label": "MakeArabicPDF",
+            "label": "Make Arabic PDF",
             "type": "shell",
             "command": "docker run --rm -v \"$PWD:/data\" --net=none -u $(id -u):$(id -g) ghcr.io/informatica-global/pandoc-texlive-full \"${relativeFile}\" -o \"${relativeFileDirname}/${fileBasenameNoExtension}.pdf\" --pdf-engine=lualatex ",
             "problemMatcher": [],
             "group": "build"
         },
         {
-            "label": "MakeArabicBeamerHandoutPDF",
+            "label": "Make Arabic Beamer Handout PDF",
             "type": "shell",
             "command": "docker run --rm -v \"$PWD:/data\" --net=none -u $(id -u):$(id -g) ghcr.io/informatica-global/pandoc-texlive-full \"${relativeFile}\" -o \"${relativeFileDirname}/${fileBasenameNoExtension}-arabic-handout.pdf\" --pdf-engine=lualatex -t beamer --slide-level=2",
             "problemMatcher": [],
             "group": "build"
         },
         {
-            "label": "MakeArabicBeamerIncrementalPDF",
+            "label": "Make Arabic Beamer Incremental PDF",
             "type": "shell",
             "command": "docker run --rm -v \"$PWD:/data\" --net=none -u $(id -u):$(id -g) ghcr.io/informatica-global/pandoc-texlive-full \"${relativeFile}\" -o \"${relativeFileDirname}/${fileBasenameNoExtension}-arabic-incremental.pdf\" --pdf-engine=lualatex -i -t beamer --slide-level=2",
             "problemMatcher": [],
             "group": "build"
         },
         {
-            "label": "MakeBeamerIncrementalPDF",
+            "label": "Make Beamer Incremental PDF",
             "type": "shell",
             "command": "docker run --rm -v \"$PWD:/data\" --net=none -u $(id -u):$(id -g) ghcr.io/informatica-global/pandoc-texlive-full \"${relativeFile}\" -o \"${relativeFileDirname}/${fileBasenameNoExtension}-incremental.pdf\" -i -t beamer --slide-level=2",
             "problemMatcher": [],
             "group": "build"
         },
         {
-            "label": "MakeBeamerHandoutPDF",
+            "label": "Make Beamer Handout PDF",
             "type": "shell",
             "command": "docker run --rm -v \"$PWD:/data\" --net=none -u $(id -u):$(id -g) ghcr.io/informatica-global/pandoc-texlive-full \"${relativeFile}\" -o \"${relativeFileDirname}/${fileBasenameNoExtension}-handout.pdf\" -t beamer --slide-level=2",
             "problemMatcher": [],

@@ -1,5 +1,7 @@
 # Docker Container for Pandoc with Full Multilingual LaTeX Packages and Arabic Fonts
 
+This container leverages Docker to run Pandoc with the necessary LaTeX packages and fonts, ensuring a consistent and reproducible environment for PDF generation. It can be used for any of the file formats supported by Pandoc. It is specifically geared towards making an easy consistent workflow to use Markdown for professional documents and presentations with beautiful LaTeX typesetting all done automatically.
+
 This Docker container provides the latest Pandoc release from its official GitHub repository, bundled with a comprehensive set of LaTeX packages and additional Arabic fonts to enhance Arabic language support. Please note that due to the inclusion of the `texlive-full` packages, the container download size exceeds 2GB.
 
 ## Running the Container
@@ -55,12 +57,12 @@ The repository includes a `.vscode/tasks.json` file, which defines several tasks
 
 The tasks are designed to cover different use cases, including creating standard PDFs, Arabic PDFs, and Beamer presentation PDFs with incremental slides and handout formats. Here is a summary of the available tasks:
 
-1. **MakePDF**: Generates a standard PDF from the current file.
-2. **MakeArabicPDF**: Generates a PDF from the current file using the `lualatex` engine, which supports Arabic and other Unicode languages.
-3. **MakeArabicBeamerHandoutPDF**: Creates a Beamer presentation handout PDF from the current file, formatted for Arabic with the `lualatex` engine.
-4. **MakeArabicBeamerIncrementalPDF**: Creates an incremental Beamer presentation PDF from the current file, formatted for Arabic with the `lualatex` engine.
-5. **MakeBeamerIncrementalPDF**: Creates an incremental Beamer presentation PDF from the current file.
-6. **MakeBeamerHandoutPDF**: Creates a Beamer presentation handout PDF from the current file.
+1. **Make PDF**: Generates a standard PDF document from the current file.
+2. **Make Arabic PDF**: Generates a PDF document from the current file using the `lualatex` engine, which supports Arabic and other Unicode languages.
+3. **Make Beamer Handout PDF**: Creates a Beamer presentation handout PDF from the current file.
+4. **Make Beamer Incremental PDF**: Creates an incremental Beamer presentation PDF from the current file.
+5. **Make Arabic Beamer Handout PDF**: Creates a Beamer presentation handout PDF from the current file, formatted for Arabic with the `lualatex` engine.
+6. **Make Arabic Beamer Incremental PDF**: Creates an incremental Beamer presentation PDF from the current file, formatted for Arabic with the `lualatex` engine.
 
 ### Running Tasks
 
@@ -97,5 +99,3 @@ Copy the `tasks.json` file to the global VS Code configuration directory typical
    ```sh
    %APPDATA%\Code\User\tasks.json
    ```
-
-These tasks leverage Docker to run Pandoc with the necessary LaTeX packages and fonts, ensuring a consistent and reproducible environment for PDF generation.
