@@ -12,6 +12,6 @@ updates:
     schedule:
       interval: "daily"
     rebase-strategy: "auto"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
+    # ignore:
+    #   - dependency-name: "*"
+    #     update-types: ["version-update:semver-major"]
