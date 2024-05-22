@@ -1,8 +1,8 @@
 # Docker Container for Pandoc with Full Multilingual LaTeX Packages and Arabic Fonts
 
-This container leverages Docker to run Pandoc with the necessary LaTeX packages and fonts, ensuring a consistent and reproducible environment for PDF generation. It supports various file formats handled by Pandoc and is tailored to facilitate a streamlined workflow for creating professional documents and presentations with Markdown and LaTeX typesetting.
+This container leverages Docker to run [Pandoc](https://pandoc.org/) with the necessary LaTeX packages and fonts, ensuring a consistent and reproducible environment for PDF generation. It supports various file formats handled by Pandoc and is tailored to facilitate a streamlined workflow for creating professional documents and presentations with Markdown and LaTeX typesetting.
 
-This Docker container provides the latest Pandoc release from its official GitHub repository, bundled with a comprehensive set of LaTeX packages and additional Arabic fonts to enhance Arabic language support. Due to the inclusion of the `texlive-full` packages, the container download size exceeds 2GB.
+This Docker container directly installs the latest release from [Pandoc's official GitHub repository](https://github.com/jgm/pandoc), bundled with a comprehensive set of LaTeX packages and additional Arabic fonts to enhance Arabic language support. Due to the inclusion of the `texlive-full` packages, the container download size exceeds 2GB.
 
 ## Running the Container
 
