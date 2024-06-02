@@ -4,7 +4,7 @@ This container leverages Docker to run [Pandoc](https://pandoc.org/) with the ne
 
 This Docker container directly installs the latest release from [Pandoc's official GitHub repository](https://github.com/jgm/pandoc), bundled with a comprehensive set of LaTeX packages and additional Arabic fonts to enhance Arabic language support. Due to the inclusion of the `texlive-full` packages, the container download size exceeds 2GB.
 
-## Running the Container
+## Running the Container (Linux, Mac, BSD)
 
 Ensure Docker is installed on your system. Then, use one of the following commands:
 
