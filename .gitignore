@@ -1,3 +1,2 @@
 *.pdf
-local.Makefile
-.github/workflows/build.yml
+Makefile.local
