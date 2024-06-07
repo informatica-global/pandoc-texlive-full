@@ -32,4 +32,6 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
     && rm -rf /usr/share/info/* \
     && rm -rf /usr/share/locale/*
 
+RUN fc-cache \
+    && luaotfload-tool -u -f
 LABEL version="$LATEST_RELEASE"
