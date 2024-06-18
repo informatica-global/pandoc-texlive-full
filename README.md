@@ -28,6 +28,16 @@ ghcr.io/informatica-global/pandoc-texlive-full \
 "README.md" -o "./README.pdf" --pdf-engine=lualatex 
 ```
 
+### Creating an English Language PDF with Eisvogel Template
+
+The following example demonstrates how to create a PDF from this README file:
+
+```sh
+docker run --rm -v "$PWD:/data" --net=none -u $(id -u):$(id -g) \
+ghcr.io/informatica-global/pandoc-texlive-full \
+"README.md" -o "./README.pdf" --template eisvogel --listings
+```
+
 ## Building the Container
 
 To build the container yourself, execute the following command:
