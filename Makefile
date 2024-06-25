@@ -1,5 +1,5 @@
 # Define variables
-LATEST_RELEASE := $(shell wget -q -O - "https://api.github.com/repos/jgm/pandoc/releases/latest" | grep -oP '"tag_name": "\K(.*)(?=")')
+LATEST_RELEASE := 3.2
 IMAGE_NAME := ghcr.io/informatica-global/pandoc-texlive-full
 LOCAL_IMAGE_TAG := $(shell docker images --format "{{.Tag}}" $(IMAGE_NAME) | grep -v latest | sort -rV | head -n 1)
 
