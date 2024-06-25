@@ -1,5 +1,5 @@
 # Define variables
-LATEST_RELEASE := 3.2
+LATEST_RELEASE := 3.2.1
 IMAGE_NAME := ghcr.io/informatica-global/pandoc-texlive-full
 LOCAL_IMAGE_TAG := $(shell docker images --format "{{.Tag}}" $(IMAGE_NAME) | grep -v latest | sort -rV | head -n 1)
 
