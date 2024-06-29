@@ -43,21 +43,8 @@ ghcr.io/informatica-global/pandoc-texlive-full \
 To build the container yourself, execute the following command:
 
 ```sh
-make
+docker buildx build  -t ghcr.io/informatica-global/pandoc-texlive-full .
 ```
-
-To build and push the Docker image to a registry, execute:
-
-```sh
-make push
-```
-
-### Notes
-
-- You can add extra tags or repositories in the Makefile to automate tagging and pushing.
-- The `LATEST_RELEASE` variable is automatically updated with the latest Pandoc version number.
-- The Docker image will be tagged with both the specific Pandoc version and `latest`.
-- Ensure Docker and `make` are installed on your system.
 
 ## Using VS Code Tasks for PDF Generation
 

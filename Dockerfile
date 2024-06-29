@@ -1,6 +1,5 @@
 # syntax = docker/dockerfile:1.2
-ARG LATEST_RELEASE=3.2.1
-FROM docker.io/pandoc/extra:$LATEST_RELEASE
+FROM docker.io/pandoc/extra:3.2.1
 
 ENV DEBIAN_FRONTEND=noninteractive \
     LANG=C.UTF-8
