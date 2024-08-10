@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:1.2
-FROM docker.io/pandoc/extra:3.2.1
+FROM docker.io/pandoc/extra:3.3.0-alpine
 
 ENV DEBIAN_FRONTEND=noninteractive \
     LANG=C.UTF-8
