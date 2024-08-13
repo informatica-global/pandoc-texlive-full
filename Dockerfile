@@ -1,11 +1,12 @@
+# syntax = docker/dockerfile:1.2
+
 FROM docker.io/pandoc/extra:3.3.0-alpine
 
-# Install TexLive full from the local repository
+# Set the local repository as the default repository for tlmgr
 RUN --mount=type=bind,source=./texlive/tlnet,target=/texlive/tlnet \
-    tlmgr init-usertree /texlive \
-    && tlmgr option repository /texlive/tlnet \
-    && ls -lah /texlive/tlnet \
-    && tlmgr install -repository file:/texlive/tlnet scheme-full \
+    tlmgr option repository /texlive/tlnet \
+    && tlmgr init-usertree /texlive \
+    && tlmgr install scheme-full \
     && rm -rf /usr/share/doc/* \
     && rm -rf /usr/share/man/* \
     && rm -rf /usr/share/info/* \
