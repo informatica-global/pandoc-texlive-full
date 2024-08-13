@@ -20,6 +20,6 @@ push:
 
 # Clean up
 clean:
-	@echo "Cleaning up..."
+	@echo "Cleaning up...Prune, last_sync timestamp"
 	@docker system prune
 	@rm -f ./texlive/last_sync
