@@ -6,7 +6,7 @@ LAST_SYNC_FILE="./texlive/last_sync"
 
 # Function to perform rsync and handle errors
 perform_rsync() {
-  rsync -a --delete $REMOTE_URL $LOCAL_DIR
+  rsync -av --delete $REMOTE_URL $LOCAL_DIR
   if [ $? -ne 0 ]; then
     echo "Error: rsync failed."
     exit 1
