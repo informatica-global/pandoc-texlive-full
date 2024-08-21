@@ -1,3 +1,4 @@
+texlive/
 *.pdf
 Makefile.local
 removed-ubuntu-fonts.md
