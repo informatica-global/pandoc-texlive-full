@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:1.2
 
-FROM docker.io/pandoc/extra:3.3.0-alpine
+FROM docker.io/pandoc/extra:3.4.0-alpine
 
 # Set the local repository as the default repository for tlmgr
 RUN --mount=type=bind,source=./texlive/tlnet,target=/texlive/tlnet \
