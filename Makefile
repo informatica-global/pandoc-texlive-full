@@ -5,19 +5,14 @@ all: update-texlive build-docker
 
 # Update the TeX Live repository
 update-texlive:
-	@echo "Updating TeX Live repository..."
+	@echo "Make: Updating TeX Live repository..."
 	@./update_texlive.sh
 
 # Build the Docker image
 build-docker:
 	@echo "Building Docker image..."
-	@DOCKER_BUILDKIT=1 docker buildx build -t hub.informatica-global.com/informatica/pandoc-texlive-full:latest -t ghcr.io/informatica-global/pandoc-texlive-full .
+	@DOCKER_BUILDKIT=1 docker buildx build --file localtexlive.Dockerfile -t ghcr.io/informatica-global/pandoc-texlive-full .
 	
-# Push to local Registery
-push:
-	@echo "Building Docker image..."
-	@docker push hub.informatica-global.com/informatica/pandoc-texlive-full
-
 # Clean up
 clean:
 	@echo "Cleaning up...Prune, last_sync timestamp"

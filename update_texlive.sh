@@ -40,7 +40,7 @@ time_diff=$((current_time - last_sync_time))
 
 # Check if the difference is greater than one day (86400 seconds)
 if [ $time_diff -gt 86400 ]; then
-  echo "Updating TeX Live repository..."
+  echo "Last update over 1 day. Updating TeX Live repository..."
   perform_rsync
 else
   echo "TeX Live repository is up to date."
