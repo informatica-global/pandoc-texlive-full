@@ -1,4 +1,4 @@
-# syntax = docker/dockerfile:1.2
+# syntax = docker/dockerfile:1.4
 
 FROM docker.io/pandoc/extra:3.5.0-alpine
 
