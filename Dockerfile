@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:1.4
-FROM docker.io/pandoc/extra:3.7.0-alpine
+FROM docker.io/pandoc/extra:3.8.0-alpine
 LABEL maintainer="informatica-global.com <support@informatica-global.com>" \
     org.opencontainers.image.title="Pandoc with Full Multilingual LaTeX Packages and Arabic Fonts" \
     org.opencontainers.image.description="Docker container for Pandoc with all LaTeX packages and fonts, tailored to create professional documents and presentations in multiple languages." \
