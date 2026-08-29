@@ -11,6 +11,7 @@ LABEL maintainer="informatica-global.com <support@informatica-global.com>" \
 # Set the local repository as the default repository for tlmgr
 RUN --mount=type=bind,source=./texlive/tlnet,target=/texlive/tlnet \
     tlmgr option repository /texlive/tlnet \
+    && tlmgr update --self \
     && tlmgr init-usertree /texlive \
     && tlmgr install scheme-full \
     && rm -rf /usr/share/doc/* \
