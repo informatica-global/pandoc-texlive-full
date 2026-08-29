@@ -35,7 +35,7 @@ The following example demonstrates how to create a PDF from this README file:
 ```sh
 docker run --rm -v "$PWD:/data" --net=none -u $(id -u):$(id -g) \
 ghcr.io/informatica-global/pandoc-texlive-full \
-"README.md" -o "./README.pdf" --template eisvogel --listings
+"README.md" -o "./README.pdf" --template eisvogel --syntax-highlighting idiomatic
 ```
 
 ## Building the Container
